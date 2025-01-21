@@ -18,7 +18,22 @@ function adicionarAmigo(){
     //INSERINDO OS VALORES DO INPUT NO ARRAY CASO FOR VÁLIDO
         listaSecreta.push(nomeLista)
         console.log('Lista: '+ listaSecreta)
+        percorrerListaSectreta()
     }
     campoAmigo.value = '' //LIMPANDO O VALOR DO CAMPO PARA VAZIO APÓS ADICIONAR
-    
+}
+
+//FUNÇÃO PARA PERCORRER A LISTA DE AMIGOS E ADICIONAR EM UMA PARTE DA PAGINA
+function percorrerListaSectreta(){
+
+    let listaAmigosHTML = document.getElementById('listaAmigos')
+    listaAmigosHTML.innerHTML = ''
+
+    let listaHTML = ''
+
+    for(let i = 0; i < listaSecreta.length; i++){
+        listaHTML += `<li>Amigo: ${listaSecreta[i]}</li>`
+    }
+
+    listaAmigosHTML.innerHTML = listaHTML
 }
